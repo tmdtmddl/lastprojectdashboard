@@ -12,6 +12,16 @@
   input {
     @apply outline-0 focus:border-primary;
   }
+  button,
+  a {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .col {
+    @apply flex flex-col;
+  }
 }
 
 /* @media (prefers-color-scheme: dark) {

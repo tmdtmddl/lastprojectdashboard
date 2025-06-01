@@ -12,6 +12,7 @@ const AppLayout = ({ children }: PropsWithChildren) => {
             height={80}
             width={80}
             className=""
+            priority
           />
         </div>
       </div>
