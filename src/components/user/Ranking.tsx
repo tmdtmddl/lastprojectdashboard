@@ -14,6 +14,7 @@ import {
   Legend,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
+import Loaiding from "../Loading";
 
 ChartJS.register(
   CategoryScale,
@@ -66,6 +67,7 @@ const RankingPage = () => {
   const { data, error, isPending } = useQuery({
     queryKey: ["topUsers"],
     queryFn: fetchTopUsers,
+    staleTime: 1000 * 60 * 10,
   });
 
   const chartData = {
@@ -79,12 +81,12 @@ const RankingPage = () => {
     ],
   };
 
-  if (isPending) return <div>Loading...</div>;
+  if (isPending) return <Loaiding message="팔로워 상위 5인 로딩중..." />;
   if (error) return <div>에러 발생: {error.message}</div>;
 
   return (
-    <div className="bg-gray-50 p-10 rounded-lg">
-      <h2 className="font-bold text-xl"> 팔로워 상위 5인</h2>
+    <div className="bg-gray-50 p-10 rounded-lg col gap-y-4">
+      <h2 className="font-bold text-3xl"> 팔로워 상위 5인</h2>
       <div className="w-full min-h-[400px]  p-2.5">
         <Bar
           data={chartData}

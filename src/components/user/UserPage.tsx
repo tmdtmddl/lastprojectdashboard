@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import React, { useCallback } from "react";
 import RankingPage from "./Ranking";
 import { FaUser } from "react-icons/fa";
+import Loaiding from "../Loading";
 
 const ref = dbService.collection(FBCollection.USERS);
 
@@ -26,10 +27,11 @@ const UserPage = () => {
   const { data, error, isPending } = useQuery({
     queryKey: ["users"],
     queryFn: fetchUser,
+    staleTime: 1000 * 60 * 10,
   });
 
   if (isPending) {
-    return <div>loading...</div>;
+    return <Loaiding message="유저 정보를 불러오는 중입니다..." />;
   }
   if (error) {
     return <div>에러가 발생했습니다: {error.message}</div>;
