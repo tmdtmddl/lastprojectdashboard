@@ -2,29 +2,9 @@
 
 import { dbService, FBCollection } from "@/lib/firebase";
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-} from "chart.js";
 import { Bar } from "react-chartjs-2";
 import Loaiding from "../Loading";
-
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
+import useChartJS from "@/hooks/useChartJs";
 
 // 유저 데이터 + 팔로워 수 포함 타입
 interface UserWithFollowerCount {
@@ -64,6 +44,8 @@ const fetchTopUsers = async (): Promise<UserWithFollowerCount[]> => {
 };
 
 const RankingPage = () => {
+  useChartJS();
+
   const { data, error, isPending } = useQuery({
     queryKey: ["topUsers"],
     queryFn: fetchTopUsers,
