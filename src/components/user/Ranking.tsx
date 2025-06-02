@@ -2,7 +2,7 @@
 
 import { dbService, FBCollection } from "@/lib/firebase";
 import { useQuery } from "@tanstack/react-query";
-import { Bar } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 import Loaiding from "../Loading";
 import useChartJS from "@/hooks/useChartJs";
 
@@ -63,23 +63,31 @@ const RankingPage = () => {
     ],
   };
 
-  if (isPending) return <Loaiding message="팔로워 상위 5인 로딩중..." />;
-  if (error) return <div>에러 발생: {error.message}</div>;
+  if (isPending) {
+    return <Loaiding message="팔로워 상위 5인 로딩중..." />;
+  }
+  if (error) {
+    return <div>에러 발생: {error.message}</div>;
+  }
 
   return (
-    <div className="bg-gray-50 p-10 rounded-lg col gap-y-4">
-      <h2 className="font-bold text-3xl"> 팔로워 상위 5인</h2>
-      <div className="w-full min-h-[400px]  p-2.5">
-        <Bar
-          data={chartData}
-          options={{
-            plugins: {
-              legend: {
-                display: false, // 위쪽 초록 박스 없애기
+    <div className="bg-gray-50 sm:p-10 p-4 rounded-lg col gap-y-4    ">
+      <h2 className="font-bold sm:text-3xl text-xl"> 팔로워 상위 5인</h2>
+      <div className="overflow-x-auto">
+        <div className="w-full aspect-[4/3] p-2.5 ">
+          <Line
+            data={chartData}
+            options={{
+              plugins: {
+                legend: {
+                  display: false, // 위쪽 초록 박스 없애기
+                },
               },
-            },
-          }}
-        />
+              responsive: true, // 반응형 차트
+              maintainAspectRatio: false, // 차트 크기 유지
+            }}
+          />
+        </div>
       </div>
     </div>
   );

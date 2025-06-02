@@ -38,9 +38,9 @@ const UserPage = () => {
   }
 
   return (
-    <div className="p-10 col gap-y-10">
-      <div className="flex justify-center gap-x-14  py-20 bg-gray-50 rounded-lg">
-        <div className=" col items-center justify-center">
+    <div className="p-10 col gap-y-10  justify-center items-center">
+      <div className="flex justify-center gap-x-14  py-20 bg-gray-50 rounded-lg ">
+        <div className=" col items-center justify-center ">
           <p className="font-bold text-4xl">유저수</p>
         </div>
         <div className=" flex flex-col items-center justify-center gap-y-2.5">
