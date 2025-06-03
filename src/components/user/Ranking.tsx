@@ -71,23 +71,23 @@ const RankingPage = () => {
   }
 
   return (
-    <div className="bg-gray-50 sm:p-10 p-4 rounded-lg col gap-y-4    ">
-      <h2 className="font-bold sm:text-3xl text-xl"> 팔로워 상위 5인</h2>
-      <div className="overflow-x-auto">
-        <div className="w-full aspect-[4/3] p-2.5 ">
-          <Line
-            data={chartData}
-            options={{
-              plugins: {
-                legend: {
-                  display: false, // 위쪽 초록 박스 없애기
-                },
+    <div className="bg-gray-50  p-4 rounded-lg col gap-y-6 min-w-[400px]   ">
+      <h2 className="font-bold sm:text-2xl text-xl"> 팔로워 상위 5인</h2>
+
+      <div className="w-full aspect-[4/3]  ">
+        {/* aspect = 세로는 자동으로 가로 * 3/4 크기로 설정 */}
+        <Line
+          data={chartData}
+          options={{
+            plugins: {
+              legend: {
+                display: false, // 위쪽 초록 박스 없애기
               },
-              responsive: true, // 반응형 차트
-              maintainAspectRatio: false, // 차트 크기 유지
-            }}
-          />
-        </div>
+            },
+            responsive: true, // 반응형 차트
+            maintainAspectRatio: false, // 차트 크기 유지
+          }}
+        />
       </div>
     </div>
   );

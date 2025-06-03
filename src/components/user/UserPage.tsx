@@ -38,20 +38,21 @@ const UserPage = () => {
   }
 
   return (
-    <div className="p-10 col gap-y-10  justify-center items-center">
-      <div className="flex justify-center gap-x-14  py-20 bg-gray-50 rounded-lg ">
-        <div className=" col items-center justify-center ">
-          <p className="font-bold text-4xl">유저수</p>
-        </div>
-        <div className=" flex flex-col items-center justify-center gap-y-2.5">
+    <div className=" col  p-10 gap-y-10  justify-center items-center">
+      <div className="col  gap-y-12   bg-gray-50 rounded-lg p-4   min-w-[400px] min-h-[200px] ">
+        <p className="font-bold sm:text-2xl text-xl">유저수</p>
+
+        <div className=" flex flex-col items-center justify-center gap-y-2.5 ">
           <div>
-            <FaUser className="text-6xl text-primary" />
+            <FaUser className="text-4xl sm:text-5xl text-primary" />
           </div>
           {data && data.length === 0 && (
-            <p className="text-3xl font-black text-emerald-600">유저없음</p>
+            <p className="text-xl sm:text-2xl font-bold text-emerald-600">
+              유저없음
+            </p>
           )}
           {data && data.length > 0 && (
-            <p className="font-bold text-3xl text-emerald-600">
+            <p className="font-bold text-xl sm:text-2xl text-emerald-600">
               {data.length}
               <span className="text-black">명</span>
             </p>
