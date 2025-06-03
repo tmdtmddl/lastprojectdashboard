@@ -33,7 +33,7 @@ const Page = () => {
           <p className="font-bold text-sm sm:text-xl">Post</p>
         </button>
       </div>
-      <div className="flex-1 p-6">
+      <div className="flex-1 ">
         {tab === "user" && <UserPage />}
         {tab === "post" && <PostPage />}
       </div>
