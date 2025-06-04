@@ -1,10 +1,11 @@
+"use client";
 import { dbService, FBCollection } from "@/lib/firebase";
 import { useQuery } from "@tanstack/react-query";
 import React, { useCallback } from "react";
-import Loaiding from "../Loading";
+import Loaiding from "../../../components/Loading";
 import { BsFileEarmarkPost } from "react-icons/bs";
-import PostLike from "./postLike";
-import PostDate from "./postDate";
+import PostLike from "../../../components/post/postLike";
+import PostDate from "../../../components/post/postDate";
 
 const PostPage = () => {
   const ref = dbService.collection(FBCollection.POSTS);

@@ -11,7 +11,7 @@ export default function AdminLogin() {
   const handleLogin = () => {
     const adminPassword = process.env.NEXT_PUBLIC_ADMIN_PASSWORD;
     if (pw === adminPassword) {
-      navi.push("/dashboard");
+      navi.push("/dashboard/user");
     } else {
       alert("비밀번호가 올바르지 않습니다.");
       return pwRef.current?.focus();

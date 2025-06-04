@@ -2,9 +2,9 @@
 import { dbService, FBCollection } from "@/lib/firebase";
 import { useQuery } from "@tanstack/react-query";
 import React, { useCallback } from "react";
-import RankingPage from "./Ranking";
+import RankingPage from "../../../components/user/Ranking";
 import { FaUser } from "react-icons/fa";
-import Loaiding from "../Loading";
+import Loaiding from "../../../components/Loading";
 
 const ref = dbService.collection(FBCollection.USERS);
 
