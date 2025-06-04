@@ -47,17 +47,17 @@ const PostDate = () => {
   };
 
   if (isPending) {
-    return <Loaiding message="게시글 날짜별 통계 로딩중..." />;
+    return <Loaiding />;
   }
   if (error) {
     return <div>에러 발생: {error.message}</div>;
   }
 
   return (
-    <div className="bg-gray-50  p-4 rounded-lg col gap-y-6 min-w-[400px]   ">
+    <div className="bg-gray-50  rounded-lg col gap-y-6 p-2 sm:p-4 min-w-[270px]   sm:min-w-[400px]  ">
       <h2 className="font-bold sm:text-2xl text-xl"> 날짜별 게시글 수</h2>
 
-      <div className="w-full aspect-[4/3]  ">
+      <div className="max-w-[250px] sm:max-w-[400px] overflow-x-auto aspect-[4/3]    ">
         {/* aspect = 세로는 자동으로 가로 * 3/4 크기로 설정 */}
         <Bar
           data={chartData}

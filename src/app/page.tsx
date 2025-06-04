@@ -23,7 +23,7 @@ export default function AdminLogin() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center h-[900px] gap-y-6">
+    <div className="flex flex-col items-center justify-center min-h-[600px] gap-y-6">
       <h1 className="text-3xl font-bold"> 관리자 로그인</h1>
       <div className="flex flex-col gap-y-4">
         <div className="flex flex-col">

@@ -38,8 +38,8 @@ const UserPage = () => {
   }
 
   return (
-    <div className=" col  p-4 gap-y-10  justify-center items-center">
-      <div className="col  gap-y-12   bg-gray-50 rounded-lg p-4   min-w-[400px] min-h-[200px] ">
+    <div className=" col  p-2 sm:p-4 gap-y-10  justify-center items-center">
+      <div className=" col  gap-y-12   bg-gray-50 rounded-lg p-2 sm:p-4 min-w-[270px]   sm:min-w-[400px] min-h-[200px]  ">
         <p className="font-bold sm:text-2xl text-xl">유저수</p>
 
         <div className=" flex flex-col items-center justify-center gap-y-2.5 ">

@@ -8,7 +8,7 @@ const Page = () => {
   const [tab, setTab] = useState<"user" | "post">("user");
   return (
     <div className="flex min-h-screen ">
-      <div className=" w-32 border-r border-gray-200  ">
+      <div className="w-20 sm:w-32 border-r border-gray-200  ">
         <button
           className={twMerge(
             "w-full block  p-4 text-md font-bold sm:text-xl  transition-all duration-300 hover:text-emerald-500 ",
