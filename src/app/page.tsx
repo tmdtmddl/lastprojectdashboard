@@ -25,7 +25,13 @@ export default function AdminLogin() {
   return (
     <div className="flex flex-col items-center justify-center min-h-[600px] gap-y-6">
       <h1 className="text-3xl font-bold"> 관리자 로그인</h1>
-      <form className="flex flex-col gap-y-4">
+      <form
+        className="flex flex-col gap-y-4"
+        onSubmit={(e) => {
+          e.preventDefault();
+          return handleLogin();
+        }}
+      >
         <div className="flex flex-col">
           <label htmlFor="pw" className="text-gray-400">
             비번
